@@ -5,6 +5,7 @@ const express = require("express");
 // const swaggerUi = require("swagger-ui-express");
 const app = express();
 
+// Middleware to parse JSON request bodies, it converts incoming request bodies to JSON format
 app.use(bodyParser.json());
 
 // load the test data

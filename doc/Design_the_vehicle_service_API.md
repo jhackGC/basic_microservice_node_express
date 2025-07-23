@@ -52,3 +52,100 @@ Our next requirement is to be able to delete a vehicle.
 Now, this will be an HTTP DELETE. Again, we're going to pass the id of the vehicle that we want to delete with the URL, and we no longer need to provide a request body.
 
 And so we continue until we've mapped out all of our endpoints, and it should look something like this.
+
+# API Design
+
+### Vehicle Model
+
+- Make : string
+- Model : string
+- Registration : string
+- Year : number
+- Price : number
+
+### Endpoints
+
+1. Create Vehicle
+
+   ```bash
+   HTTP POST
+   URL: /vehicle
+   Request body: Vehicle entity
+   Response:
+    201: Vehicle created
+    500: Application error
+   ```
+
+2. Update Vehicle
+
+   ```bash
+   HTTP PUT
+   URL: /vehicle/:id
+   Request body: Vehicle entity
+   Response:
+    200: Vehicle updated
+    500: Application error
+   ```
+
+3. Delete Vehicle
+
+   ```bash
+   HTTP DELETE
+   URL: /vehicle/:id
+   Response:
+    200: OK
+    500: Application error
+   ```
+
+4. Get Vehicle by ID
+
+```bash
+   HTTP GET
+   URL: /vehicle/:id
+   Response:
+    200: Vehicle retrieved
+    404: Vehicle not found
+    500: Application error
+```
+
+5. Get all Vehicles
+
+```bash
+   HTTP GET
+   URL: /vehicles
+   Response:
+    200: A list of vehicles
+    404: Vehicles not found
+    500: Application error
+```
+
+6. Get Vehicle by Registration Number
+
+```bash
+   HTTP GET
+   URL: /vehicle/search/:registrationNumber
+   Response:
+    200: A vehicle
+    404: Vehicle not found
+    500: Application error
+```
+
+7. Get Vehi`cles by Max Price
+
+```bash
+   HTTP GET
+   URL: /vehicles/price/:maxPrice
+   Response:
+    200: A list of vehicles
+    404: Vehicles not found
+    500: Application error
+```
+
+```bash
+   HTTP GET
+   URL: /vehicles/price/:maxPrice
+   Response:
+    200: A list of vehicles
+    404: Vehicles not found
+    500: Application error
+```
